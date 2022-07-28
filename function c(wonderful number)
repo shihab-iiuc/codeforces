@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int odd(int A)
+{
+    if(A%2!=0)
+         return 1;
+    else
+        return 2;
+}
+int Array_palingdrome(int N)
+  {
+      int arr[100010],c=0,i=0,j,temp;
+ 
+    while(N!=0)
+    {
+        temp=N%2;
+        arr[i]=temp;
+        i++;
+        N=N/2;
+ 
+    }
+    for(j=i-1;j>=0;j--)
+    {
+ 
+        if(arr[j]!=arr[i-j-1])
+            c=1;
+ 
+ 
+    }
+    if(c==0)
+        return 1;
+     else
+        return 2;
+  }
+int main()
+{
+    int num,x,p;
+    cin>>num;
+    x=Array_palingdrome(num);
+    p=odd(num);
+    if(x==1 && p==1)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+ 
+}
